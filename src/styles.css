@@ -4,7 +4,14 @@
 body {
   font-family: var(--font-family);
 }
+
 label{
   color: #ee2b7b;
+  margin-bottom: 5px;
+  white-space: nowrap;
+
 }
 
+html {
+  font-size: 12px;
+}

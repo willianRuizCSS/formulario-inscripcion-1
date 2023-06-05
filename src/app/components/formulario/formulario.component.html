@@ -1,31 +1,42 @@
+
+
+<h2 class="d-flex justify-content-center mt-5 mb-5"><b> INSCRIPCIÓN DE
+    PROVEEDOES</b></h2>
+
+<!-- <h6 class="d-flex justify-content-center mt-5 mb-5">¡Está invitado! Ubicación del evento.</h6> -->
+<br>
+
 <p-steps [model]="steps" [activeIndex]="currentStep"></p-steps>
-
 <div class="container" [ngSwitch]="currentStep">
-  <div class="" *ngSwitchCase="0">
+  <div class *ngSwitchCase="0">
     <!-- Contenido del primer paso -->
-    <div class="form-group">
-      <label for="nombre">Nombre</label>
-      <input type="text" class="form-control" id="nombre" formControlName="nombre">
-    </div>
-
-    <br>
-
     <div class="row justify-content-center">
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="tipoProveedor">Tipo de Proveedor</label>
-          <select class="form-control" id="tipoProveedor" formControlName="tipoProveedor">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="nombre">Este formulario
+            registrará su nombre, escriba su
+            nombre:</label>
+          <input type="text" class="form-control" id="nombre"
+            formControlName="nombre">
+        </div>
+      </div>
+
+      <div class="col-md-6 mx-auto">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="tipoProveedor">1.Tipo de
+            Persona:</label>
+          <select class="form-control" id="tipoProveedor"
+            formControlName="tipoProveedor">
             <option value="natural">Natural</option>
             <option value="juridica">Jurídica</option>
           </select>
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="CategoriaTributaria">Categoría Tributaria</label>
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="CategoriaTributaria">2.Categoría
+            Tributaria:</label>
           <select class="form-control" formControlName="CategoriaTributaria">
             <option value="Declarante">Declarante</option>
             <option value="AgenteRetenedor">Agente Retenedor</option>
@@ -33,17 +44,31 @@
           </select>
         </div>
       </div>
-    </div> 
+
+      <div class="col-md-6 mx-auto">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="numeroDeDocumento">3.Actividad
+            Económica: (Solo ingrese
+            Números)</label>
+          <input type="text" class="form-control" id="numeroDeDocumento"
+            formControlName="numeroDeDocumento">
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Aqui termina la primera seleccion -->
   <!-- Contenido del segundo paso -->
   <div *ngSwitchCase="1">
     <div class="row justify-content-center">
+
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="tipoProveedor">Actividad Económica (Solo ingrese Números)</label>
-          <select class="form-control" id="actividadEconomica " formControlName="tipoProveedor">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="tipoProveedor">4.Tipo de
+            Documento:</label>
+          <select class="form-control" id="actividadEconomica "
+            formControlName="tipoProveedor">
             <option value="nit">NIT.</option>
             <option value="cedula">CC.</option>
             <option value="cedulaExtranjeria">CE.</option>
@@ -52,25 +77,41 @@
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="numeroDeDocumento">Número de documento (si es NIT sin punto y con digito de verificación)</label>
-          <input type="text" class="form-control" id="numeroDeDocumento" formControlName="numeroDeDocumento">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="numeroDeDocumento">5.Número de
+            documento (si es NIT sin
+            punto y con digito de verificación)</label>
+          <input type="text" class="form-control" id="numeroDeDocumento"
+            formControlName="numeroDeDocumento">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="nombresApellidosCompletosDelRepresentanteLegal">Si es razón social, por favor indique Nombres y Apellidos completos del Representante Legal,
+        <div class="form-group mt-5">
+          <label class="fixed-width-label"
+            for="nombresApellidosCompletosDelRepresentanteLegal">6.Nombre y
+            Apellidos completos ó Razón Social: (Cómo figura en el RUT)</label>
+          <input type="text" class="form-control"
+            id="nombresApellidosCompletosDelRepresentanteLegal"
+            formControlName="nombresApellidosCompletosDelRepresentanteLegal">
+        </div>
+      </div>
+      <div class="mx-auto">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label"
+            for="nombresApellidosCompletosDelRepresentanteLegal">7.Si es
+            razón social, por favor indique Nombres y Apellidos completos del
+            Representante Legal,
             en caso contrario colocar N/A</label>
-          <input type="text" class="form-control" id="nombresApellidosCompletosDelRepresentanteLegal" formControlName="nombresApellidosCompletosDelRepresentanteLegal">
+          <input type="text" class="form-control"
+            id="nombresApellidosCompletosDelRepresentanteLegal"
+            formControlName="nombresApellidosCompletosDelRepresentanteLegal">
         </div>
       </div>
+
     </div>
+
   </div>
 
   <!-- Aqui termina la segunda seleccion -->
@@ -79,37 +120,56 @@
   <div *ngSwitchCase="2">
     <div class="row justify-content-center">
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="tipoNumeroDocumentoRepresentanteLegal">Tipo y Número de Documento de Identidad del represéntate legal, en caso contrario colocar
+        <div class="form-group mt-5">
+          <label class="fixed-width-label"
+            for="tipoNumeroDocumentoRepresentanteLegal">8.Tipo y Número de
+            Documento de Identidad del represéntate legal, en caso contrario
+            colocar
             N/A</label>
-          <input type="text" class="form-control" id="tipoNumeroDocumentoRepresentanteLegal" formControlName="tipoNumeroDocumentoRepresentanteLegal">
+          <input type="text" class="form-control"
+            id="tipoNumeroDocumentoRepresentanteLegal"
+            formControlName="tipoNumeroDocumentoRepresentanteLegal">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="entidadBancaria">Entidad Bancaria</label>
-          <input type="text" class="form-control" id="entidadBancaria" formControlName="entidadBancaria">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="entidadBancaria">9. Entidad
+            Bancaria:</label>
+          <select class="form-control" id="entidadBancaria"
+            formControlName="entidadBancaria">
+            <option value>Selecciona una entidad bancaria</option>
+            <option value="Bancolombia">Bancolombia</option>
+            <option value="Banco de Bogotá">Banco de Bogotá</option>
+            <option value="Davivienda">Davivienda</option>
+            <option value="BBVA">BBVA</option>
+            <option value="Banco de Occidente">Banco de Occidente</option>
+            <option value="Banco Popular">Banco Popular</option>
+            <option value="Banco AV Villas">Banco AV Villas</option>
+            <option value="Banco Caja Social">Banco Caja Social</option>
+            <option value="Banco Falabella">Banco Falabella</option>
+            <option value="Banco GNB Sudameris">Banco GNB Sudameris</option>
+            <option value="Banco Pichincha">Banco Pichincha</option>
+            <option value="Citibank">Citibank</option>
+            <option value="Colpatria">Colpatria</option>
+          </select>
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="numeroDeCuenta">Número de Cuenta</label>
-          <input type="text" class="form-control" id="numeroDeCuenta" formControlName="numeroDeCuenta">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="numeroDeCuenta">10.Número de
+            Cuenta:</label>
+          <input type="text" class="form-control" id="numeroDeCuenta"
+            formControlName="numeroDeCuenta">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="tipoDeCuenta">Tipo de cuenta</label>
-          <select class="form-control" id="tipoDeCuenta" formControlName="tipoDeCuenta">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="tipoDeCuenta">11.Tipo de cuenta:</label>
+          <select class="form-control" id="tipoDeCuenta"
+            formControlName="tipoDeCuenta">
             <option value="ahorros">Ahorros.</option>
             <option value="corriente">Corriente.</option>
           </select>
@@ -124,193 +184,378 @@
   <div *ngSwitchCase="3">
     <div class="row justify-content-center">
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="aNombreDe"> A nombre de: </label>
-          <input type="text" class="form-control" id="aNombreDe" formControlName="aNombreDe">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="aNombreDe">12. A nombre de:
+          </label>
+          <input type="text" class="form-control" id="aNombreDe"
+            formControlName="aNombreDe">
         </div>
       </div>
-
-      <br>
 
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="direccionPrincipal">Dirección Principal</label>
-          <input type="text" class="form-control" id="direccionPrincipal" formControlName="direccionPrincipal">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="direccionPrincipal">13.Dirección
+            Principal:</label>
+          <input type="text" class="form-control" id="direccionPrincipal"
+            formControlName="direccionPrincipal">
         </div>
       </div>
-
-      <br>
-      <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="barrioOSector">Barrio ó sector</label>
-          <input type="text" class="form-control" id="barrioOSector" formControlName="barrioOSector">
-        </div>
-      </div>
-
-      <br>
 
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="municipio">Municipio</label>
-          <input type="text" class="form-control" id="municipio" formControlName="municipio">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="barrioOSector">14.Barrio ó
+            sector</label>
+          <input type="text" class="form-control" id="barrioOSector"
+            formControlName="barrioOSector">
         </div>
       </div>
-
-      <br>
-      <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="departamento">Departamento</label>
-          <input type="text" class="form-control" id="departamento" formControlName="departamento">
-        </div>
-      </div>
-
-      <br>
 
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="pais">País</label>
-          <input type="text" class="form-control" id="pais" formControlName="pais">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="municipio">15. Municipio</label>
+          <select class="form-control" id="municipio"
+            formControlName="municipio">
+            <option value>Selecciona un municipio</option>
+            <option value="Abejorral">Abejorral</option>
+            <option value="Abriaquí">Abriaquí</option>
+            <option value="Alejandría">Alejandría</option>
+            <option value="Amagá">Amagá</option>
+            <option value="Amalfi">Amalfi</option>
+            <option value="Andes">Andes</option>
+            <option value="Angelópolis">Angelópolis</option>
+            <option value="Angostura">Angostura</option>
+            <option value="Anorí">Anorí</option>
+            <option value="Anzá">Anzá</option>
+            <option value="Apartadó">Apartadó</option>
+            <option value="Arboletes">Arboletes</option>
+            <option value="Argelia">Argelia</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Barbosa">Barbosa</option>
+            <option value="Bello">Bello</option>
+            <option value="Belmira">Belmira</option>
+            <option value="Betania">Betania</option>
+            <option value="Betulia">Betulia</option>
+            <option value="Bolívar">Bolívar</option>
+            <option value="Briceño">Briceño</option>
+            <option value="Buriticá">Buriticá</option>
+            <option value="Cáceres">Cáceres</option>
+            <option value="Caicedo">Caicedo</option>
+            <option value="Caldas">Caldas</option>
+            <option value="Campamento">Campamento</option>
+            <option value="Cañasgordas">Cañasgordas</option>
+            <option value="Caracolí">Caracolí</option>
+            <option value="Caramanta">Caramanta</option>
+            <option value="Carepa">Carepa</option>
+            <option value="Carolina del Príncipe">Carolina del Príncipe</option>
+            <option value="Caucasia">Caucasia</option>
+            <option value="Chigorodó">Chigorodó</option>
+            <option value="Cisneros">Cisneros</option>
+            <option value="Ciudad Bolívar">Ciudad Bolívar</option>
+            <option value="Cocorná">Cocorná</option>
+            <option value="Concepción">Concepción</option>
+            <option value="Concordia">Concordia</option>
+            <option value="Copacabana">Copacabana</option>
+            <option value="Dabeiba">Dabeiba</option>
+            <option value="Don Matías">Don Matías</option>
+            <option value="Ebéjico">Ebéjico</option>
+            <option value="El Bagre">El Bagre</option>
+            <option value="El Carmen de Viboral">El Carmen de Viboral</option>
+            <option value="El Peñol">El Peñol</option>
+            <option value="El Retiro">El Retiro</option>
+            <option value="El Santuario">El Santuario</option>
+            <option value="Entrerríos">Entrerríos</option>
+            <option value="Envigado">Envigado</option>
+            <option value="Fredonia">Fredonia</option>
+            <option value="Frontino">Frontino</option>
+            <option value="Giraldo">Giraldo</option>
+            <option value="Girardota">Girardota</option>
+            <option value="Gómez Plata">Gómez Plata</option>
+            <option value="Granada">Granada</option>
+            <option value="Guadalupe">Guadalupe</option>
+            <option value="Guarne">Guarne</option>
+            <option value="Guatapé">Guatapé</option>
+            <option value="Heliconia">Heliconia</option>
+            <option value="Hispania">Hispania</option>
+            <option value="Itagüí">Itagüí</option>
+            <option value="Ituango">Ituango</option>
+            <option value="Jardín">Jardín</option>
+            <option value="Jericó">Jericó</option>
+            <option value="La Ceja">La Ceja</option>
+            <option value="La Estrella">La Estrella</option>
+            <option value="La Pintada">La Pintada</option>
+            <option value="La Unión">La Unión</option>
+            <option value="Liborina">Liborina</option>
+            <option value="Maceo">Maceo</option>
+            <option value="Marinilla">Marinilla</option>
+            <option value="Medellín">Medellín</option>
+            <option value="Montebello">Montebello</option>
+            <option value="Murindó">Murindó</option>
+            <option value="Mutatá">Mutatá</option>
+            <option value="Nariño">Nariño</option>
+            <option value="Necoclí">Necoclí</option>
+            <option value="Nechí">Nechí</option>
+            <option value="Olaya">Olaya</option>
+            <option value="Peque">Peque</option>
+            <option value="Pueblorrico">Pueblorrico</option>
+            <option value="Puerto Berrío">Puerto Berrío</option>
+            <option value="Puerto Nare">Puerto Nare</option>
+            <option value="Puerto Triunfo">Puerto Triunfo</option>
+            <option value="Remedios">Remedios</option>
+            <option value="Retiro">Retiro</option>
+            <option value="Rionegro">Rionegro</option>
+            <option value="Sabanalarga">Sabanalarga</option>
+            <option value="Sabaneta">Sabaneta</option>
+            <option value="Salgar">Salgar</option>
+            <option value="San Andrés de Cuerquía">San Andrés de Cuerquía</option>
+            <option value="San Carlos">San Carlos</option>
+            <option value="San Francisco">San Francisco</option>
+            <option value="San Jerónimo">San Jerónimo</option>
+            <option value="San José de la Montaña">San José de la Montaña</option>
+            <option value="San Juan de Urabá">San Juan de Urabá</option>
+            <option value="San Luis">San Luis</option>
+            <option value="San Pedro">San Pedro</option>
+            <option value="San Pedro de Urabá">San Pedro de Urabá</option>
+            <option value="San Rafael">San Rafael</option>
+            <option value="San Roque">San Roque</option>
+            <option value="San Vicente">San Vicente</option>
+            <option value="Santa Bárbara">Santa Bárbara</option>
+            <option value="Santa Fe de Antioquia">Santa Fe de Antioquia</option>
+            <option value="Santa Rosa de Osos">Santa Rosa de Osos</option>
+            <option value="Santo Domingo">Santo Domingo</option>
+            <option value="Segovia">Segovia</option>
+            <option value="Sonsón">Sonsón</option>
+            <option value="Sopetrán">Sopetrán</option>
+            <option value="Támesis">Támesis</option>
+            <option value="Tarazá">Tarazá</option>
+            <option value="Tarso">Tarso</option>
+            <option value="Titiribí">Titiribí</option>
+            <option value="Toledo">Toledo</option>
+            <option value="Turbo">Turbo</option>
+            <option value="Uramita">Uramita</option>
+            <option value="Urrao">Urrao</option>
+            <option value="Valdivia">Valdivia</option>
+            <option value="Valparaíso">Valparaíso</option>
+            <option value="Vegachí">Vegachí</option>
+            <option value="Venecia">Venecia</option>
+            <option value="Vigía del Fuerte">Vigía del Fuerte</option>
+            <option value="Yalí">Yalí</option>
+            <option value="Yarumal">Yarumal</option>
+            <option value="Yolombó">Yolombó</option>
+            <option value="Yondó">Yondó</option>
+            <option value="Zaragoza">Zaragoza</option>
+          </select>
         </div>
       </div>
+
     </div>
   </div>
 
   <!-- Aqui termina la tercera seleccion -->
-  <!-- Contenido del cuarta paso -->
+  <!-- Contenido del cuarto paso -->
 
   <div *ngSwitchCase="4">
     <div class="row justify-content-center">
+
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="numeroDeTelefonoFijoOpcional">Número de teléfono fijo opcional</label>
-          <input type="text" class="form-control" id="numeroDeTelefonoFijoOpcional" formControlName="numeroDeTelefonoFijoOpcional">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="departamento">16. Departamento:</label>
+          <select class="form-control" id="departamento"
+            formControlName="departamento">
+            <option value>Selecciona un departamento</option>
+            <option value="Amazonas">Amazonas</option>
+            <option value="Antioquia">Antioquia</option>
+            <option value="Arauca">Arauca</option>
+            <option value="Atlántico">Atlántico</option>
+            <option value="Bolívar">Bolívar</option>
+            <option value="Boyacá">Boyacá</option>
+            <option value="Caldas">Caldas</option>
+            <option value="Caquetá">Caquetá</option>
+            <option value="Casanare">Casanare</option>
+            <option value="Cauca">Cauca</option>
+            <option value="Cesar">Cesar</option>
+            <option value="Chocó">Chocó</option>
+            <option value="Córdoba">Córdoba</option>
+            <option value="Cundinamarca">Cundinamarca</option>
+            <option value="Guainía">Guainía</option>
+            <option value="Guaviare">Guaviare</option>
+            <option value="Huila">Huila</option>
+            <option value="La Guajira">La Guajira</option>
+            <option value="Magdalena">Magdalena</option>
+            <option value="Meta">Meta</option>
+            <option value="Nariño">Nariño</option>
+            <option value="Norte de Santander">Norte de Santander</option>
+            <option value="Putumayo">Putumayo</option>
+            <option value="Quindío">Quindío</option>
+            <option value="Risaralda">Risaralda</option>
+            <option value="San Andrés y Providencia">San Andrés y Providencia</option>
+            <option value="Santander">Santander</option>
+            <option value="Sucre">Sucre</option>
+            <option value="Tolima">Tolima</option>
+            <option value="Valle del Cauca">Valle del Cauca</option>
+            <option value="Vaupés">Vaupés</option>
+            <option value="Vichada">Vichada</option>
+          </select>
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="numeroCelularOWhatsapp">Número celular ó whatsapp</label>
-          <input type="text" class="form-control" id="numeroCelularOWhatsapp" formControlName="numeroCelularOWhatsapp">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="pais">17.País:</label>
+          <input type="text" class="form-control" id="pais"
+            formControlName="pais">
         </div>
       </div>
 
-      <br>
+      <div class="form-group mt-5">
+        <label class="fixed-width-label" for="numeroDeTelefonoFijoOpcional">18.Número
+          de teléfono fijo
+          opcional:</label>
+        <input type="text" class="form-control"
+          id="numeroDeTelefonoFijoOpcional"
+          formControlName="numeroDeTelefonoFijoOpcional">
+      </div>
 
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="correoElectronico">Correo Electrónico</label>
-          <input type="text" class="form-control" id="correoElectronico" formControlName="correoElectronico">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="numeroCelularOWhatsapp">19.Número
+            celular ó whatsapp:</label>
+          <input type="text" class="form-control" id="numeroCelularOWhatsapp"
+            formControlName="numeroCelularOWhatsapp">
         </div>
       </div>
+
+      <div class="col-md-6 mx-auto">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="correoElectronico">20.Correo
+            Electrónico:</label>
+          <input type="text" class="form-control" id="correoElectronico"
+            formControlName="correoElectronico">
+        </div>
+      </div>
+
     </div>
+
   </div>
+
+  <!-- Aqui termina la tercera seleccion -->
+  <!-- Contenido del cinco paso -->
 
   <div *ngSwitchCase="5">
     <div class="row justify-content-center">
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="contactoUnoEjecutivoComercial"> Contacto 1 Ejecutivo Comercial- Nombre y Apellidos completos-Cargo </label>
-          <input type="text" class="form-control" id="contactoUnoEjecutivoComercial" formControlName="contactoUnoEjecutivoComercial">
+
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="contactoUnoEjecutivoComercial">21.Contacto
+            1 Ejecutivo
+            Comercial- Nombre y Apellidos completos-Cargo: </label>
+          <input type="text" class="form-control"
+            id="contactoUnoEjecutivoComercial"
+            formControlName="contactoUnoEjecutivoComercial">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="contactoUnoNumero">Número de contacto 1</label>
-          <input type="text" class="form-control" id="contactoUnoNumero" formControlName="contactoUnoNumero">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="contactoUnoNumero">22.Número de
+            contacto 1:</label>
+          <input type="text" class="form-control" id="contactoUnoNumero"
+            formControlName="contactoUnoNumero">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="contactoUnoCorreo"> Correo electrónico contacto 1</label>
-          <input type="text" class="form-control" id="contactoUnoCorreo" formControlName="contactoUnoCorreo">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="contactoUnoCorreo">23. Correo
+            electrónico contacto 1:</label>
+          <input type="text" class="form-control" id="contactoUnoCorreo"
+            formControlName="contactoUnoCorreo">
         </div>
       </div>
     </div>
   </div>
 
   <!-- Aqui termina la quinta seleccion -->
-  <!-- Contenido del sexta paso -->
+  <!-- Contenido del sexto paso -->
 
   <div *ngSwitchCase="6">
     <div class="row justify-content-center">
 
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="contactoDosEjecutivoComercial">Contacto 2 área contable Nombre y Apellidos Completos- Cargo</label>
-          <input type="text" class="form-control" id="contactoDosEjecutivoComercial" formControlName="contactoDosEjecutivoComercial">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="contactoDosEjecutivoComercial">24.Contacto
+            2 área contable
+            Nombre y Apellidos Completos- Cargo:</label>
+          <input type="text" class="form-control"
+            id="contactoDosEjecutivoComercial"
+            formControlName="contactoDosEjecutivoComercial">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="contactoDosNumero"> Numero de contacto 2 </label>
-          <input type="text" class="form-control" id="contactoDosNumero" formControlName="contactoDosNumero">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="contactoDosNumero">25. Numero de
+            contacto 2: </label>
+          <input type="text" class="form-control" id="contactoDosNumero"
+            formControlName="contactoDosNumero">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="contactoDosCorreo"> Correo electrónico contacto 2</label>
-          <input type="text" class="form-control" id="contactoDosCorreo" formControlName="contactoDosCorreo">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="contactoDosCorreo">26. Correo
+            electrónico contacto 2:</label>
+          <input type="text" class="form-control" id="contactoDosCorreo"
+            formControlName="contactoDosCorreo">
         </div>
       </div>
     </div>
   </div>
 
   <!-- Aqui termina la sexta seleccion -->
-  <!-- Contenido del septima paso -->
+  <!-- Contenido del septimo paso -->
 
   <div *ngSwitchCase="7">
     <div class="row justify-content-center">
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="categoriaDeProducto">Categoría de Producto  ó servicio que ofrece</label>
-          <select class="form-control" id="categoriaDeProducto" formControlName="categoriaDeProducto">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="categoriaDeProducto">27.Categoría
+            de Producto ó servicio
+            que ofrece:</label>
+          <select class="form-control" id="categoriaDeProducto"
+            formControlName="categoriaDeProducto">
             <option value="tangible">Tangible.</option>
             <option value="intangible">Intangible.</option>
           </select>
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="especifiqueCategoriaDeBienes">  Especifique categoría de bienes o servicios ofrecidos</label>
-          <input type="text" class="form-control" id="especifiqueCategoriaDeBienes" formControlName="especifiqueCategoriaDeBienes">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="especifiqueCategoriaDeBienes">28.Especifique
+            categoría de
+            bienes o servicios ofrecidos:</label>
+          <input type="text" class="form-control"
+            id="especifiqueCategoriaDeBienes"
+            formControlName="especifiqueCategoriaDeBienes">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="formaDePago">Forma de pago</label>
-          <select class="form-control" id="formaDePago" formControlName="formaDePago">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="formaDePago">29.Forma de pago:</label>
+          <select class="form-control" id="formaDePago"
+            formControlName="formaDePago">
             <option value="credito">Crédito.</option>
             <option value="contado">Contado.</option>
           </select>
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="plazoDePago">Plazo de pago</label>
-          <select class="form-control" id="plazoDePago" formControlName="plazoDePago">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="plazoDePago">30.Plazo de pago:</label>
+          <select class="form-control" id="plazoDePago"
+            formControlName="plazoDePago">
             <option value="credito">30 Días.</option>
             <option value="contado">45 Días.</option>
             <option value="credito">60 Días.</option>
@@ -319,13 +564,12 @@
           </select>
         </div>
       </div>
-
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="especifiqueCual">  ¿Especifique cual?</label>
-          <input type="text" class="form-control" id="especifiqueCual" formControlName="especifiqueCual">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="especifiqueCual">
+            31.¿Especifique cual?</label>
+          <input type="text" class="form-control" id="especifiqueCual"
+            formControlName="especifiqueCual">
         </div>
       </div>
     </div>
@@ -336,22 +580,27 @@
 
   <div *ngSwitchCase="8">
     <div class="row justify-content-center">
-      <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="aplicaDescuentoFinanciero">Aplica descuento financiero por pronto pago (en caso de afirmativa colocar SI y el descuento
-            con el %), en caso contrario colocar  N/A</label>
-          <input type="text" class="form-control" id="aplicaDescuentoFinanciero" formControlName="aplicaDescuentoFinanciero">
+      <div class="mx-auto">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="aplicaDescuentoFinanciero">32.Aplica
+            descuento financiero
+            por pronto pago: (en caso de afirmativa colocar SI y el descuento
+            con el %), en caso contrario colocar N/A:</label>
+          <input type="text" class="form-control"
+            id="aplicaDescuentoFinanciero"
+            formControlName="aplicaDescuentoFinanciero">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="clasificaciónTributaria"> Clasificación  tributaria</label>
-          <select class="form-control" id="clasificaciónTributaria" formControlName="clasificaciónTributaria">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="clasificaciónTributaria">33.Clasificación
+            tributaria:</label>
+          <select class="form-control" id="clasificaciónTributaria"
+            formControlName="clasificaciónTributaria">
             <option value="regimencomun">Régimen Común (Responsable de IVA).</option>
-            <option value="regimenSimplificado">Régimen Simplificado (No responsable de IVA).</option>
+            <option value="regimenSimplificado">Régimen Simplificado (No
+              responsable de IVA).</option>
             <option value="granContribuyente">Gran contribuyente.</option>
             <option value="empresaDelEstado">Empresa del Estado.</option>
             <option value="regimenEspecial">Régimen Especial.</option>
@@ -360,12 +609,12 @@
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="tipoDeRegimen"> Tipo de Regimen</label>
-          <select class="form-control" id="tipoDeRegimen" formControlName="tipoDeRegimen">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="tipoDeRegimen"> 34.Tipo de
+            Regimen:</label>
+          <select class="form-control" id="tipoDeRegimen"
+            formControlName="tipoDeRegimen">
             <option value="ordinario">Ordinario.</option>
             <option value="simple">Simple.</option>
           </select>
@@ -380,27 +629,34 @@
   <div *ngSwitchCase="9">
     <div class="row justify-content-center">
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="reclamoDeGarantiaProcedimiento"> En caso de reclamo por garantía, indique el procedimiento:</label>
-          <input type="text" class="form-control" id="reclamoDeGarantiaProcedimiento" formControlName="reclamoDeGarantiaProcedimiento">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="reclamoDeGarantiaProcedimiento">35.En
+            caso de reclamo por
+            garantía, indique el procedimiento:</label>
+          <input type="text" class="form-control"
+            id="reclamoDeGarantiaProcedimiento"
+            formControlName="reclamoDeGarantiaProcedimiento">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="refeerenciaComercialUno">Referencia Comercial 1-Razón social y contacto (nombre y apellidos completos)</label>
-          <input type="text" class="form-control" id="refeerenciaComercialUno" formControlName="refeerenciaComercialUno">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="refeerenciaComercialUno">36.Referencia
+            Comercial 1-Razón
+            social y contacto (nombre y apellidos completos)</label>
+          <input type="text" class="form-control" id="refeerenciaComercialUno"
+            formControlName="refeerenciaComercialUno">
         </div>
       </div>
 
-      <br>
-
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="referneciaComercialUnoNumero">Número teléfono fijo, celular y correo electrónico</label>
-          <input type="text" class="form-control" id="referneciaComercialUnoNumero" formControlName="referneciaComercialUnoNumero">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="referneciaComercialUnoNumero">37.Número
+            teléfono fijo,
+            celular y correo electrónico:</label>
+          <input type="text" class="form-control"
+            id="referneciaComercialUnoNumero"
+            formControlName="referneciaComercialUnoNumero">
         </div>
       </div>
     </div>
@@ -412,41 +668,81 @@
   <div *ngSwitchCase="10">
     <div class="row justify-content-center">
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="refeerenciaComercialDos">Referencia Comercial 2-Razón social y contacto (nombre y apellidos completos)</label>
-          <input type="text" class="form-control" id="refeerenciaComercialDos" formControlName="refeerenciaComercialDos">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="refeerenciaComercialDos">38.Referencia
+            Comercial 2-Razón
+            social y contacto (nombre y apellidos completos)</label>
+          <input type="text" class="form-control" id="refeerenciaComercialDos"
+            formControlName="refeerenciaComercialDos">
         </div>
       </div>
-
-      <br>
 
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="referneciaComercialDosNumero">Número teléfono fijo, celular y correo electrónico</label>
-          <input type="text" class="form-control" id="referneciaComercialDosNumero" formControlName="referneciaComercialDosNumero">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="referneciaComercialDosNumero">39.Número
+            teléfono fijo,
+            celular y correo electrónico</label>
+          <input type="text" class="form-control"
+            id="referneciaComercialDosNumero"
+            formControlName="referneciaComercialDosNumero">
         </div>
       </div>
 
-      <br>
+      <div class="mx-auto">
+        <div class="form-group mt-5">
+          <div class="form-group mt-5">
+            <label class="fixed" for="sistemaDeGestionAmbiental">
+              40. ¿Su compañía tiene implementado sistema de gestión ambiental?:
+              <p>
+                Si su respuesta es afirmativa indique el número de la
+                certificación y por favor,envié una copia de la certificación en
+                vigor donde se evidencie el tipo de certificación y la fecha, al
+                correo electrónico fdiaz@cesde.edu.co
+              </p>
+            </label>
+          </div>
 
+          <input type="text" class="form-control"
+            id="sistemaDeGestionAmbiental"
+            formControlName="sistemaDeGestionAmbiental">
+        </div>
+      </div>
       <div class="col-md-6 mx-auto">
-        <div class="form-group">
-          <label for="sistemaDeGestionAmbiental"> ¿Su compañía tiene implementado sistema de gestión ambiental? si su respuesta es
-            afirmativa indique el número de la certificación  y por favor, envié una copia de la
-            certificación en vigor donde se evidencie el tipo de certificación y la fecha, al correo
-            electrónico fdiaz@cesde.edu.co</label>
-          <input type="text" class="form-control" id="sistemaDeGestionAmbiental" formControlName="sistemaDeGestionAmbiental">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="tipoDeRegimen">41. ¿Si la
+            compañía a obtenido un
+            reconocimiento o certificado por gestión ambiental o
+            responsabilidad Social?:</label>
+          <select class="form-control" id="tipoDeRegimen"
+            formControlName="tipoDeRegimen">
+            <option value="ordinario">SI.</option>
+            <option value="simple">NO.</option>
+          </select>
         </div>
       </div>
+
+      <div class="mx-auto">
+        <div class="form-group mt-5">
+          <label class="fixed-width-label" for="sistemaDeGestionAmbiental">
+            42.Enviar al correo fdiaz@cesde.edu.co la evolución de estándares
+            mínimos del SGSST </label>
+          <input type="text" class="form-control"
+            id="sistemaDeGestionAmbiental"
+            formControlName="sistemaDeGestionAmbiental">
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- Aqui termina la noveno seleccion -->
-  <!-- Contenido de botónes -->
+  <!-- Aqui termina la decimo seleccion -->
+  <!-- Contenido del decimo paso -->
 
   <div class="d-flex justify-content-center my-3 button-container">
-    <button type="button" class="btn btn-primary btn-sm mx-3 " (click)="previousStep()">Anterior</button>
-    <button type="button" class="btn btn-primary btn-sm mx-3 " (click)="nextStep()">Siguiente</button>
+    <button type="button" class="btn btn-primary btn-sm mx-3 "
+      (click)="previousStep()">Anterior</button>
+    <button type="button" class="btn btn-primary btn-sm mx-3 "
+      (click)="nextStep()">Siguiente</button>
     <!-- <button type="button" class="btn btn-primary btn-sm mx-3 " (click)="nextStep()" [disabled]="!proveedorForm.valid">Siguiente</button> -->
   </div>
 

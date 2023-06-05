@@ -1,11 +1,31 @@
+
+h2{
+  color: #ee2b7b;
+}
+
+
 .btn {
-    font-size: 0.9em;
-    width: 140px;
-    height: 32px;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    border-radius: 10px;
-    background-color: #30b0d5;
-    border-color: #30b0d5;
-    margin-top: 15px;
-  }
+  font-size: 0.9em;
+  width: 140px;
+  height: 32px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 10px;
+  background-color: #30b0d5;
+  border-color: #30b0d5;
+  margin-top: 15px;
+}
+
+.fixed-width-label {
+  width: 300px;
+  display: block;
+  white-space: nowrap;
+
+
+}
+
+.fixed {
+  width: 300px;
+  height: 2.8em;
+  line-height: 1.4;
+}
